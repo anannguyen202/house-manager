@@ -28,3 +28,4 @@ nbdist/
 /temp
 /bin
 /tmp
+/.mvn/wrapper/maven-wrapper.jar
