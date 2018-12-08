@@ -1,0 +1,49 @@
+<div class="page">
+    <div class="container">
+        <h1>
+            <button class="back" routerLink="/home">
+                <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+            </button> Tính tiền phòng 1
+        </h1>
+
+        <br>
+
+        <div class="info">
+            <div class="custom-box">
+                <i class="fa fa-snowflake-o"></i> Máy lạnh
+            </div>
+            <div class="custom-box">
+                <i class="fa fa-circle-o"></i> Phòng đơn
+            </div>
+            <div class="custom-box">
+                <i class="fa fa-usd"></i> 70.000 đ /h
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="custom-box">
+                <i class="fa fa-clock-o"></i> Vào lúc: 12:30
+            </div>
+            <div class="custom-box">
+                <i class="fa fa-clock-o"></i> Thời gian ở: 02:00
+            </div>
+            <div class="custom-box">
+                <i class="fa fa-user-o"></i> 2 người
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="custom-box">
+                Ghi chú: bla bla
+            </div>
+        </div>
+
+        <div class="total-amount">185.000 đ</div>
+
+        <br>
+
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+            <button type="submit" class="custom-box button-c">Trả phòng</button>
+        </form>
+    </div>
+</div>

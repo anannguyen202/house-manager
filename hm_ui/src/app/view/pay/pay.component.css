@@ -1,0 +1,30 @@
+h1 {
+    /* text-align: center; */
+}
+
+.info {
+    font-size: 27px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+
+.info .custom-box { 
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.info i {
+    margin-right: 10px;
+}
+
+.info .custom-box {
+    display: block;
+}
+
+.total-amount {
+    color: #28a745;
+    font-size: 100px;
+    text-align: center;
+	font-family: 'Roboto-Bold', sans-serif;
+}

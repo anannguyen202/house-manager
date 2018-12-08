@@ -1,0 +1,127 @@
+h1 {
+    display: flex;
+    font-family: 'Roboto-Bold', sans-serif;
+    align-items: center;
+}
+
+#d-d {
+    display: flex;
+    height: 60px;
+    margin-left: 25px;
+}
+
+#d-d .radio-custom {
+    width: 100px;
+}
+#d-d .checkmark {
+    width: 100px;
+    font-size: 30px;
+    color: #ccc;
+    box-shadow: 0 10px 30px 1px rgba(0, 0, 0, 0);
+}
+
+#d-d input:checked ~ .checkmark {
+    background-color: #bbbbbb;
+    color: #f1f1f1;
+}
+
+
+.type .radio-custom {
+    height: 100px;
+}
+
+.type .radio-custom:hover {
+    transform: scale(1.05);
+}
+
+.type .checkmark {
+    width: 100%;
+    height: 100px;
+    font-size: 38px;
+    color: #ccc;
+    /* border: 2px dashed #ddd; */
+}
+
+.type .checkmark i {
+    margin-right: 15px;
+}
+
+.type input:checked ~ .checkmark {
+    background-color: #32cd56;
+    color: #ffffff;
+}
+
+.time-box {
+    white-space: nowrap;
+}
+
+#time-type {
+    float: left;
+    display: flex;
+}
+
+#time-type .radio-custom {
+    width: 130px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+#time-type .radio-custom:hover {
+    transform: scale(1.05);
+}
+
+#time-type .checkmark {
+    width: 130px;
+    font-size: 35px;
+    color: #ccc;
+}
+
+#time-type input:checked ~ .checkmark {
+    background-color: #32cd56;
+    color: #f1f1f1;
+}
+
+.room-person-box {
+    width: 100%;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.room-person-box li {
+    flex-grow: 1;
+}
+
+.room-person-box li:not(:last-child) {
+    margin-right: 15px;
+}
+
+.time-input {
+    width: 100px;
+    background: #f1f1f1;
+    font-size: 40px;
+    float: left;
+    font-family: 'Roboto-Bold', sans-serif;
+    margin-right: 15px;
+    margin-bottom: 25px;
+}
+
+.time-input::-webkit-inner-spin-button {
+    background: #2196F3;
+    opacity: .2;
+}
+
+.time-input::-webkit-inner-spin-button:hover,
+.time-input::-webkit-inner-spin-button:active{
+    opacity: 1;
+}
+
+.description {
+    width: 100%;
+    resize: none;
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 25px;
+    height: 100px;
+}
