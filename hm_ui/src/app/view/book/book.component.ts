@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, formatDate, DatePipe } from '@angular/common';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RHProvider } from 'src/app/provider/room-history.';
+import { Room } from 'src/app/utilities/const';
 declare var $: any
 
 @Component({
@@ -28,31 +29,41 @@ export class BookComponent implements OnInit {
         private location: Location,
         private fb: FormBuilder,
         private ar: ActivatedRoute,
+        private router: Router,
         private rh: RHProvider,
         private datePipe: DatePipe
     ) {
         const d = new Date();
-        const hour = formatDate(d, 'hh', 'en');
-        const aa = formatDate(d, 'aa', 'en');
-
-        this.bookForm = this.fb.group({
-            roomSize: ['p1'],
-            type: ['ml'],
-            inHours: [hour],
-            inMinutes: [d.getMinutes()],
-            timeType: [aa],
-            roomPerson: ['1'],
-            description: []
-        });
-        
         this.roomId = this.ar.snapshot.paramMap.get('id');
+
+        //default
+        const defaultSize = this.canSelectRoomSize(this.roomId) ? Room.SINGLE : Room.COUPLE;
+        const defaultType = Room.AIR;
+        const defaultPerson = '1';
+        const defaultOver = 'H';
+        const defaultTime = {
+            hour: formatDate(d, 'hh', 'en'),
+            minute: formatDate(d, 'mm', 'en'),
+            aa: formatDate(d, 'aa', 'en')
+        };
+        
+        this.bookForm = this.fb.group({
+            roomSize: [defaultSize],
+            type: [defaultType],
+            inHours: [defaultTime.hour],
+            inMinutes: [defaultTime.minute],
+            timeType: [defaultTime.aa],
+            roomPerson: [defaultPerson],
+            description: [],
+            overNight: [defaultOver]
+        });
     }
 
     ngOnInit() {
     }
 
-    canSelectRoomSize(roomId: String) {
-        return roomId == '1' ? false : true;
+    canSelectRoomSize(roomId: string) {
+        return Room.MULTIPLE_SIZE_ROOMS.indexOf(roomId) === -1;
     }
 
     ngAfterViewInit() {
@@ -142,7 +153,7 @@ export class BookComponent implements OnInit {
         }
 
         this.rh.checkIn(info)
-            .subscribe((rsp: any) => console.log(rsp));
+            .subscribe((rsp: any) => this.router.navigateByUrl('/home'));
     }
 
     onBack() {

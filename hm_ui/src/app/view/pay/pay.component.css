@@ -1,5 +1,13 @@
+.page {
+    background: -webkit-linear-gradient(-45deg, #8363a1 0%, #74a8c3 100%);
+    background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+    background-attachment: fixed;
+    height: 100vh;
+}
+
 h1 {
-    /* text-align: center; */
+    font-family: 'Roboto-Bold', sans-serif;
+    color: #ffffff;
 }
 
 .info {
@@ -12,19 +20,20 @@ h1 {
 .info .custom-box { 
     margin-right: 25px;
     margin-bottom: 25px;
+    /* padding: 2px 5px; */
+    background: rgba(255, 255, 255, .9) !important;
 }
 
 .info i {
     margin-right: 10px;
 }
 
-.info .custom-box {
-    display: block;
-}
-
 .total-amount {
-    color: #28a745;
-    font-size: 100px;
+    font-size: 10rem;
     text-align: center;
 	font-family: 'Roboto-Bold', sans-serif;
+    background: -webkit-linear-gradient(-45deg, #ffffff 0%, #f1f1f1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f1f1f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

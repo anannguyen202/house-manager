@@ -6,6 +6,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { SignInComponent } from './view/sign-in/sign-in.component';
 import { BookComponent } from './view/book/book.component';
 import { PayComponent } from './view/pay/pay.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,9 +15,10 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,
     children: [
       { path: '', component: DashboardComponent },
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'book/:id', component: BookComponent },
-      { path: 'pay', component: PayComponent },
+      { path: 'dashboard', component: DashboardComponent, data: { animation: 'Dashboard' } },
+      { path: 'book/:id', component: BookComponent, data: { animation: 'Book' } },
+      { path: 'edit/:id', component: PayComponent },
+      { path: 'pay/:id', component: PayComponent },
     ]
   },
   { path: 'sign-in', component: SignInComponent }
@@ -24,6 +27,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]

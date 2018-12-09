@@ -22,7 +22,9 @@ import com.aan.housemanager.dal.RoomHistoryDao;
 import com.aan.housemanager.dal.RoomTypeDao;
 import com.aan.housemanager.dal.UserDao;
 import com.aan.housemanager.dto.HeroDto;
+import com.aan.housemanager.dto.PayDto;
 import com.aan.housemanager.dto.ProfileDto;
+import com.aan.housemanager.dto.RHDto;
 import com.aan.housemanager.model.Room;
 import com.aan.housemanager.model.RoomHistory;
 import com.aan.housemanager.model.Users;
@@ -62,8 +64,19 @@ public class RoomHistoryService {
 	}
 	
 
-	public RoomHistory getBy(int id) {
-		RoomHistory res = roomHistoryDao.getBy(id);
+	public PayDto getPay(int id) {
+		
+		PayDto res = new PayDto();
+		List<Object[]> t = roomHistoryDao.getPay(id);
+		
+		for(Object[] i: t) {
+			res.setInDate((Date) i[1]);
+			res.setRoomId((Integer) i[2]);
+			res.setTypeId((String) i[3]);
+			res.setHourPrice((Double) i[4]);
+			break;
+		}
+		
 		return res;
 	}
 

@@ -28,12 +28,23 @@ public class RHDto {
 	@JsonProperty(value = "statusId")
 	private String statusId;
 
+	@JsonProperty(value = "historyId")
+	private Integer historyId;
+
 	@JsonProperty(value = "checkIn")
 	private RHDto2 checkIn;
 
 	// end
 
 	// region -- Get set --
+
+	public Integer getHistoryId() {
+		return historyId;
+	}
+
+	public void setHistoryId(Integer historyId) {
+		this.historyId = historyId;
+	}
 
 	public String getTypeId() {
 		return typeId;

@@ -1,4 +1,4 @@
-<div class="container-fluid ">
+<div class="container-fluid">
     <div class="room-list">
         <div class="row">
 
@@ -8,16 +8,21 @@
                     <div class="room" [class.room-avalible]="!isActivedRoom(room.statusId)" [class.room-actived]="isActivedRoom(room.statusId)">
 
                         <ng-container *ngIf="room.statusId == 'ACT'">
-                            <div class="overload">
-                                <button class="over-button" routerLink="/home/pay">Tính tiền</button>
-                            </div>
+                            <ul class="overload">
+                                <li>
+                                    <button class="over-button" routerLink="/home/edit/{{room.historyId}}">Chỉnh sửa</button>
+                                </li>
+                                <li>
+                                    <button class="over-button" routerLink="/home/pay/{{room.historyId}}">Tính tiền</button>
+                                </li>
+                            </ul>
                         </ng-container>
 
                         <div class="content">
                             <h2>
                                 Phòng {{ room.roomId }}
                                 <ng-container *ngIf="room.statusId == 'ACT'">
-                                    {{ getRoomTypeFromId(room.typeId, true) }}
+                                    {{ ' (' + getRoomTypeFromId(room.typeId, true) + ')' }}
                                 </ng-container>
                             </h2>
 
@@ -35,7 +40,7 @@
                             </ng-container>
 
                             <ng-container *ngIf="room.statusId == 'ACT'">
-                                
+
                                 <app-timer [inDate]="room.checkIn.inDate"></app-timer>
 
                                 <ul class="info">
@@ -43,7 +48,14 @@
                                         <i class="fa fa-snowflake-o"></i> {{ getRoomTypeFromId(room.typeId) }}
                                     </li>
                                     <li>
-                                        <i class="fa fa-clock-o"></i> Vào lúc: {{ room.checkIn.inDate | date: 'HH:mm' }}
+                                        <i class="fa fa-clock-o"></i> Vào lúc {{ room.checkIn.inDate | date: 'HH:mm'
+                                        }}
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-user"></i> 2 người
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-user"></i> xyz
                                     </li>
                                 </ul>
 

@@ -35,6 +35,7 @@ import com.aan.housemanager.bll.RoomHistoryService;
 import com.aan.housemanager.bll.RoomService;
 import com.aan.housemanager.bll.UserService;
 import com.aan.housemanager.common.Utils;
+import com.aan.housemanager.dto.PayDto;
 import com.aan.housemanager.dto.PayloadDto;
 import com.aan.housemanager.model.Room;
 import com.aan.housemanager.model.RoomHistory;
@@ -112,24 +113,24 @@ public class RoomHistoryController {
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/get-check-in/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/get-pay/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getCheckIn(
 			@RequestHeader HttpHeaders header, 
 			@PathVariable("id") int id) 
 	{
 		SingleRsp res = new SingleRsp();
 		
-		RoomHistory rh = null;
+		PayDto pay = null;
 		
 		try {
-			rh = roomHistoryService.getBy(id);	 
+			pay = roomHistoryService.getPay(id);	 
 		} catch (Exception ex) {
 			res.setError(ex.getMessage());
 		} 
 		
-		if (rh != null) {
+		if (pay != null) {
 			// Set Data			
-			res.setResult(rh);
+			res.setResult(pay);
 		} else {
 			res.setError("Can't check-in!");
 		}

@@ -25,7 +25,16 @@ export class TimerComponent implements OnInit {
         let lastTime = [hours, minutes, seconds].join(':');
 
         this.timer = new CountUpTimer(lastTime, (times, parameters) => {
-            this.countup = times;
+            let h = parameters.H;
+            let m = parameters.M;
+            let isNextDay = parameters.isNextDay;
+
+            if(h > 0) {
+                this.countup = [h,m].join('h ') + "'";
+            }
+            else {
+                this.countup = m + ' phút';
+            }
         });
     }
 

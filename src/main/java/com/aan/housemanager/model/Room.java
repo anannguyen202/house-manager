@@ -25,9 +25,20 @@ public class Room {
 	@Column(columnDefinition = "varchar(3)", name = "status_id")
 	private String statusId;
 	
+	@Column(columnDefinition = "INT4", name = "history_id")
+	private Integer historyId;
+	
 	// end
 
 	// region -- Get set --
+
+	public Integer getHistoryId() {
+		return historyId;
+	}
+
+	public void setHistoryId(Integer historyId) {
+		this.historyId = historyId;
+	}
 
 	public Integer getRoomId() {
 		return roomId;

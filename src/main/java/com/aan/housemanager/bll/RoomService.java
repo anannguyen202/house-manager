@@ -65,6 +65,7 @@ public class RoomService {
 			t.setRoomNumber((Integer) i[1]);
 			t.setTypeId((String) i[2]);
 			t.setStatusId((String) i[3]);
+			t.setHistoryId((Integer) i[4]);
 			t.setCheckIn(c);
 			res.add(t);
 		}

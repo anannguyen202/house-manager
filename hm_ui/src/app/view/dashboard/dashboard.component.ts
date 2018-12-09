@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CountUpTimer } from 'countup-timer-js';
-import * as moment from 'moment';
 import { RoomProvider } from 'src/app/provider/room';
 import { RHProvider } from 'src/app/provider/room-history.';
+import { Room, Text } from 'src/app/utilities/const';
 
 @Component({
     selector: 'app-dashboard',
@@ -19,25 +18,26 @@ export class DashboardComponent implements OnInit {
     ) {
     }
 
-    getRoomTypeFromId(typeId: String, size?: Boolean): String {
+    getRoomTypeFromId(typeId: String, isSize?: Boolean): String {
         if(!typeId)
             return;
 
         let tmp;
-        let type = size ? typeId.substr(3,2) : typeId.substr(3,2);
+        let size = typeId.substr(0,2);
+        let type = typeId.substr(3,2);
 
-        if(size) {
-            tmp = (type == 'p1' ? 'Đơn' : 'Đôi');
+        if(isSize) {
+            tmp = (size == Room.SINGLE ? Text.SINGLE : Text.COUPLE);
         }
         else {
-            tmp = (type == 'ml' ? 'Phòng lạnh' : 'Phòng quạt');
+            tmp = (type == Room.AIR ? Text.AIR : Text.FUN);
         }
         
         return tmp; 
     }
 
     isActivedRoom(status) {
-        return status == 'ACT' ? true : false;
+        return status == Room.STATUS_ACTIVE;
     }
 
     ngOnInit() {
