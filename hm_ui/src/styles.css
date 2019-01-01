@@ -96,13 +96,19 @@ body {
     padding: 0;
 	background: transparent;
 	cursor: pointer;
-	color: rgba(0, 0, 0, .3);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
+}
+
+.back-b {
+	color: rgba(0, 0, 0, .5);
+}
+
+.back-w {
+	color: rgba(255, 255, 255, .9);
 }
 
 .back:hover {
-    /* color: rgba(255, 255, 255, .9); */
-	color: rgba(0, 0, 0, .4);
+    opacity: .8;
 }
 
 h1 {

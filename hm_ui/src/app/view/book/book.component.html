@@ -3,10 +3,10 @@
     <div class="container">
         <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
             <h1>
-                <button type="button" class="back" (click)="onBack()">
+                <button type="button" class="abc" (click)="onBack()">
                     <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
                 </button>
-                Phòng {{ roomId }}
+                <span class="title">Phòng {{ roomId }}</span>
                 <div id="d-d">
                     <label class="radio-custom">
                         <input type="radio" value="P1" formControlName="roomSize">
@@ -25,10 +25,7 @@
             <br>
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-2">
-                        <h3>Loại phòng</h3>
-                    </div>
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <div class="type">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
@@ -54,6 +51,7 @@
                     </div>
                 </div>
             </div>
+            <br>
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-2">
@@ -147,9 +145,10 @@
                     </div>
                 </div>
             </div>
+            <br>
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-10 offset-md-2">
+                    <div class="col-md-12">
                         <button type="submit" class="custom-box button-c">Nhận phòng</button>
                     </div>
                 </div>

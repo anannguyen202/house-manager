@@ -1,9 +1,13 @@
 <div class="page animated">
     <div class="container">
         <h1>
-            <button class="back" routerLink="/home">
+            <button class="back back-w" routerLink="/home">
                 <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-            </button> Tính tiền phòng 1 (đôi)
+            </button>
+            <span class="title">Phòng 1</span>
+            <div class="room-size">
+                Đôi
+            </div>
         </h1>
 
         <br>
@@ -38,9 +42,9 @@
             </div>
         </div>
 
-        <div class="total-amount">185.000 đ</div>
-
-        <br>
+        <div class="total-amount animated bounceInUp fast">
+            185.000 đ
+        </div>
 
         <!-- <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
             <button type="submit" class="custom-box button-c">Trả phòng</button>

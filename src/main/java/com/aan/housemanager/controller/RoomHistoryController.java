@@ -113,7 +113,7 @@ public class RoomHistoryController {
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/get-pay/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/c/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getCheckIn(
 			@RequestHeader HttpHeaders header, 
 			@PathVariable("id") int id) 

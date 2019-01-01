@@ -30,9 +30,9 @@ export class ApiProvider {
     }
 
     public getToken(): string {
-        // if (!localStorage.getItem('accessToken'))
-        //     return;
-        return 'Bearer ' + localStorage.getItem('accessToken');
+        if (typeof localStorage !== 'undefined' && localStorage.length > 0)
+            return 'Bearer ' + localStorage.getItem('accessToken');
+        return '';
     }
 
     public get(endpoint: string, reqOpts?: any) {

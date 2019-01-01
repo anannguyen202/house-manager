@@ -1,32 +1,63 @@
 .page {
     /* background: -webkit-linear-gradient(-45deg, #8363a1 0%, #74a8c3 100%);
-    background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%); */
+    background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+    background-attachment: fixed; */
+    height: 100vh;
+    background: #EDF0F4;
 }
 
 h1 {
     display: flex;
     font-family: 'Roboto-Bold', sans-serif;
     align-items: center;
+    position: relative;
+    color: #ffffff;
+    font-size: 45px;
+}
+
+h1 .title {
+    margin-left: 25px;
+    background: -webkit-linear-gradient(-45deg, #8363a1 0%, #74a8c3 100%);
+    background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 button {
+    outline: 0 !important;
+    border: 0;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    color: #8363a1;
+    transition: all ease-in .2s;
+    cursor: pointer;
+}
+
+h1 button:hover {
+    opacity: .8;
 }
 
 #d-d {
     display: flex;
-    height: 60px;
+    height: 40px;
     margin-left: 25px;
 }
 
 #d-d .radio-custom {
-    width: 100px;
+    width: 80px;
+    margin-left: 10px;
 }
 #d-d .checkmark {
-    width: 100px;
+    width: 80px;
+    height: 40px;
     font-size: 30px;
     color: #ccc;
     box-shadow: 0 10px 30px 1px rgba(0, 0, 0, 0);
 }
 
 #d-d input:checked ~ .checkmark {
-    background-color: #bbbbbb;
+    background-color: #888888;
     color: #f1f1f1;
 }
 
